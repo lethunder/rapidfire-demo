@@ -1,14 +1,14 @@
 default: &default
   adapter: postgresql
   encoding: unicode
+  # For details on connection pooling, see Rails configuration guide
+  # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  timeout: 5000
+  password: lethunder1014
+  username: deployer
 
 development:
   <<: *default
-  host: db
-  username: postgres
-  password: mysecretpass
   database: rapidfire_demo
 
 # Warning: The database defined as "test" will be erased and
@@ -17,3 +17,4 @@ development:
 production:
   <<: *default
   database: rapidfire_prod
+
